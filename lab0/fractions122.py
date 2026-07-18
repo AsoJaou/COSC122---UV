@@ -11,3 +11,6 @@ class Fraction():
                 raise ZeroDivisionError
         else:
             raise ValueError('Numerator and denominator must be ints')
+        
+    def __str__(self):
+        return f"{self.numerator}/{self.denominator}"
