@@ -14,3 +14,6 @@ class Fraction():
         
     def __str__(self):
         return f"{self.numerator}/{self.denominator}"
+    
+    def __repr__(self):
+        return f"Fraction({self.numerator}, {self.denominator})"
