@@ -33,3 +33,14 @@ class Fraction():
             return True
         else:
             return False
+        
+def find_gcd(num1, num2):
+    """ 
+    Returns the Greatest Common Divisor (GCD) of num1 and num2. 
+    Assumes num1 and num2 are positive integers. 
+    """
+    smaller = min(num1, num2)
+    for i in range(smaller, 1, -1):
+        if num1 % i == 0 and num2 % i == 0:
+            return i
+    return 1
