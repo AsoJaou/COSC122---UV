@@ -1,3 +1,4 @@
 from fractions122 import Fraction
-f = Fraction(3, 4)
-print(repr(f))
+x = Fraction(1, 3)
+y = Fraction(1, 4)
+print(x + y)

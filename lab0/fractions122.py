@@ -17,3 +17,8 @@ class Fraction():
     
     def __repr__(self):
         return f"Fraction({self.numerator}, {self.denominator})"
+    
+    def __add__(self, other):
+        new_numerator = self.numerator * other.denominator + self.denominator * other.numerator
+        new_denominator = self.denominator * other.denominator
+        return Fraction(new_numerator, new_denominator)
