@@ -22,3 +22,8 @@ class Fraction():
         new_numerator = self.numerator * other.denominator + self.denominator * other.numerator
         new_denominator = self.denominator * other.denominator
         return Fraction(new_numerator, new_denominator)
+    
+    def __mul__(self, other):
+        new_numerator = self.numerator * other.numerator
+        new_denominator = self.denominator * other.denominator
+        return Fraction(new_numerator, new_denominator)
