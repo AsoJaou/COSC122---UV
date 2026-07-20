@@ -27,3 +27,9 @@ class Fraction():
         new_numerator = self.numerator * other.numerator
         new_denominator = self.denominator * other.denominator
         return Fraction(new_numerator, new_denominator)
+    
+    def __eq__(self, other):
+        if self.numerator * other.denominator == self.denominator * other.numerator:
+            return True
+        else:
+            return False
