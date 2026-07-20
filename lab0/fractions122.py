@@ -44,3 +44,14 @@ def find_gcd(num1, num2):
         if num1 % i == 0 and num2 % i == 0:
             return i
     return 1
+
+class ReducedFraction(Fraction):
+    def __init__(self, numerator, denominator=1):
+        super().__init__(numerator, denominator)
+        self._reduce()
+
+    def _reduce(self):
+        """ Reduces the fraction to its simplest possible form.
+        NOTE: This method does NOT return anything, 
+              it updates self.numerator and self.denominator
+        """
