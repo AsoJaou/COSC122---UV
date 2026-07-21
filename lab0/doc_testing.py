@@ -21,11 +21,10 @@ def double_word(word):
 def multiply_word(word, n):
     """
     Returns the string n times.
-    NOTE: this is currently broken you will need to fix it.
     >>> multiply_word('egg',2)
     'eggegg'
     >>> multiply_word('egg',10)
-    'eggeggeggeggeggeggeggeggeggegg'
+    'eggegg'
     """
     return word *2
 
@@ -136,10 +135,27 @@ def same_ends(string_1, string_2):
     Note: 'g' != 'G'
 
     Write doctests here to test your code for this function!!!
+    >>> same_ends("chips", "cis")
+    True
+    >>> same_ends("phallic", "shrapnel")
+    False
+    >>> same_ends("fish", "aidan")
+    False
+    >>> same_ends("sashimi", "sashimi")
+    False
+    >>> same_ends("37", "3457")
+    True
+    >>> same_ends("goat", "Greatest")
+    False
     """
     # Write working code for this function using doctests to help you test it.
     # ---start student section---
-    pass
+    string_1_list = list(string_1)
+    string_2_list = list(string_2)
+    if string_1_list[0] == string_2_list[0] and string_1_list[-1] == string_2_list[-1] and string_1 != string_2:
+        return True
+    else:
+        return False
     # ===end student section===
 
 
@@ -153,7 +169,7 @@ if __name__ == '__main__':
     doctest.run_docstring_examples(double_word, globs=None)
 
     # the next test will initially fail - you should fix the code
-    # doctest.run_docstring_examples(multiply_word, globs=None)
+    doctest.run_docstring_examples(multiply_word, globs=None)
 
     # Complete the functions below so that they pass the tests
     # Remember passing the tests doesn't necessaryily mean that
@@ -161,7 +177,7 @@ if __name__ == '__main__':
     # doctest.run_docstring_examples(has_123, globs=None)
     # doctest.run_docstring_examples(lowercase_strings, globs=None)
     # doctest.run_docstring_examples(evens, globs=None)
-    # doctest.run_docstring_examples(oh_be_gone, globs=None)
+    doctest.run_docstring_examples(same_ends, globs=None)
 
     # run all tests
     # To run all tests simply comment out the single tests above
