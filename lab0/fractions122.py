@@ -84,3 +84,6 @@ class MixedNumber():
     
     def __repr__(self):
         return f"MixedNumber({self.num}, ReducedFraction({self.fraction.numerator}, {self.fraction.denominator}))"
+    
+    def __str__(self):
+        return f"{self.num} and {self.fraction.numerator}/{self.fraction.denominator}"
