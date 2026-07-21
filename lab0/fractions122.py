@@ -68,3 +68,18 @@ class ReducedFraction(Fraction):
     def __mul__(self, other):
         fraction_result = super().__mul__(other)
         return ReducedFraction(fraction_result.numerator, fraction_result.denominator)
+
+class MixedNumber():
+    def __init__(self, num, fraction):
+        """Creates a new mixed number"""
+        if isinstance(num, int) and isinstance(fraction, Fraction):
+            if fraction.numerator >= fraction.denominator:
+                fraction_over = fraction.numerator // fraction.denominator
+                num += fraction_over
+                fraction.numerator -= fraction_over * fraction.denominator
+            self.num = num
+            red_fraction = ReducedFraction(fraction.numerator, fraction.denominator)
+            self.fraction = red_fraction
+    
+    def __repr__(self):
+        return f"MixedNumber({self.num}, ReducedFraction({self.fraction.numerator}, {self.fraction.denominator}))"
