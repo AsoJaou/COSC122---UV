@@ -64,3 +64,7 @@ class ReducedFraction(Fraction):
     def __add__(self, other):
         fraction_result = super().__add__(other)
         return ReducedFraction(fraction_result.numerator, fraction_result.denominator)
+    
+    def __mul__(self, other):
+        fraction_result = super().__mul__(other)
+        return ReducedFraction(fraction_result.numerator, fraction_result.denominator)
