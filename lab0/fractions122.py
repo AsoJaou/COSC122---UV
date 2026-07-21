@@ -46,15 +46,13 @@ def find_gcd(num1, num2):
     return 1
 
 class ReducedFraction(Fraction):
+    """Class to simplify fractions"""
     def __init__(self, numerator, denominator=1):
         super().__init__(numerator, denominator)
         self._reduce()
 
     def _reduce(self):
-        """ Reduces the fraction to its simplest possible form.
-        NOTE: This method does NOT return anything, 
-              it updates self.numerator and self.denominator
-        """
+        """ Reduces the fraction to its simplest possible form."""
         gcd = find_gcd(self.numerator, self.denominator)
         self.numerator = int(self.numerator / gcd)
         self.denominator = int(self.denominator / gcd)
