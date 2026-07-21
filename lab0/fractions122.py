@@ -70,6 +70,7 @@ class ReducedFraction(Fraction):
         return ReducedFraction(fraction_result.numerator, fraction_result.denominator)
 
 class MixedNumber():
+    """Class to create mixed numbers"""
     def __init__(self, num, fraction):
         """Creates a new mixed number"""
         if isinstance(num, int) and isinstance(fraction, Fraction):
