@@ -58,3 +58,7 @@ class ReducedFraction(Fraction):
         gcd = find_gcd(self.numerator, self.denominator)
         self.numerator = int(self.numerator / gcd)
         self.denominator = int(self.denominator / gcd)
+
+    def __repr__(self):
+        super().__repr__()
+        return f"ReducedFraction({self.numerator}, {self.denominator})"
