@@ -1,4 +1,7 @@
-from fractions122 import Fraction
-x = Fraction(1, 2)
-y = Fraction(1, 3)
-print(x == y)
+from fractions122 import Fraction, ReducedFraction
+r = ReducedFraction(3, 12)
+print('repr:', repr(r))
+print('str:', r)
+print('numerator is an int:', isinstance(r.numerator, int))
+print('denominator is an int:', isinstance(r.denominator, int))
+print()

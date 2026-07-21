@@ -55,3 +55,6 @@ class ReducedFraction(Fraction):
         NOTE: This method does NOT return anything, 
               it updates self.numerator and self.denominator
         """
+        gcd = find_gcd(self.numerator, self.denominator)
+        self.numerator = int(self.numerator / gcd)
+        self.denominator = int(self.denominator / gcd)
