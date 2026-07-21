@@ -1,6 +1,9 @@
 from fractions122 import Fraction, ReducedFraction
-r = ReducedFraction(12, 24)
-print('repr:', repr(r))
-print('str:', r)
-print('numerator is an int:', isinstance(r.numerator, int))
-print('denominator is an int:', isinstance(r.denominator, int))
+f = Fraction(1, 6)
+r = ReducedFraction(2, 6)
+
+# the add should return a Fraction
+print('{} + {} = {}'.format(repr(f), repr(r), repr(f + r)))
+
+# the add should return a ReducedFraction
+print('{} + {} = {}'.format(repr(r), repr(f), repr(r + f)))

@@ -60,3 +60,7 @@ class ReducedFraction(Fraction):
     def __repr__(self):
         super().__repr__()
         return f"ReducedFraction({self.numerator}, {self.denominator})"
+    
+    def __add__(self, other):
+        fraction_result = super().__add__(other)
+        return ReducedFraction(fraction_result.numerator, fraction_result.denominator)
