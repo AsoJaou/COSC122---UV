@@ -1,18 +1,18 @@
-import doctest 
+""" Doctests are fun """
+import doctest
 
-def doubler(n):
-    """ Returns double n, ie, 2*n
-    >>> doubler(2)
-    4
-    >>> doubler(10)
-    20
-    >>> doubler('wow')
-    'wowwow'
+def triple(n):
+    """ Returns triple n, ie, 3*n
+    >>> triple(1)
+    3
+    >>> triple(10)
+    30
+    >>> triple('wow')
+    'wowwowwow'
+    >>> triple('30')
+    '303030'
     """
-    return 2*n
+    return 3 * n
 
-doctest.run_docstring_examples(doubler, globs=None)
 
-# or use the following to run the doctests 
-# in all docstrings in the module
-# doctest.testmod()
+doctest.testmod()
