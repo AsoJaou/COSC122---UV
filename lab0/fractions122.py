@@ -83,7 +83,25 @@ class MixedNumber():
             self.fraction = red_fraction
     
     def __repr__(self):
-        return f"MixedNumber({self.num}, ReducedFraction({self.fraction.numerator}, {self.fraction.denominator}))"
+        numerator = self.fraction.numerator
+        denominator = self.fraction.denominator
+        return f"MixedNumber({self.num}, {repr(ReducedFraction(numerator, denominator))})"
     
     def __str__(self):
         return f"{self.num} and {self.fraction.numerator}/{self.fraction.denominator}"
+    
+    def __add__(self, other):
+        self_numerator = self.fraction.numerator
+        self_denominator = self.fraction.denominator
+
+        other_numerator = other.fraction.numerator
+        other_denominator = other.fraction.denominator
+
+        num = self.num + other.num
+        numerator = self_numerator * other_denominator + self_denominator * other_numerator
+        denominator = self_denominator * other_denominator
+        if numerator >= denominator:
+                fraction_over = numerator // denominator
+                num += fraction_over
+                numerator -= fraction_over * denominator
+        return MixedNumber(num, ReducedFraction(numerator, denominator))
